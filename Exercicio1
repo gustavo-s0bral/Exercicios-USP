@@ -1,0 +1,83 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		int carrinho = 0;
+		int carne = 50;
+		int frango = 30;
+		int suco = 10;
+		int fruta = 3;
+		int batata = 8;
+		
+		Scanner scanner1 = new Scanner(System.in);
+		
+		System.out.println("            Bem vindo ao Supermercado Mercadogusta.\n");
+		System.out.println("Você gostaria de pedir algo do menu no menu?(Responda com Sim ou Nao)");
+		String escolha1 = scanner1.nextLine();
+		
+		if (escolha1.equalsIgnoreCase("sim")){
+		    System.out.println("1 - Carne = R$ 50\n2 - Frango = R$ 30\n3- Suco = R$ 10\n4 - Fruta = R$ 3\n5 - Batata Palha = R$ 8");
+		    System.out.println("Escolha o numero do produto que voce quer:");
+		    int escolha2 = scanner1.nextInt();
+		    
+		    switch (escolha2){
+		        case 1:
+		            System.out.println("Quantos desse produto voce deseja?");
+		            int escolha3 = scanner1.nextInt();
+		            
+		            int carneVezes = carne * escolha3;
+		            carrinho += carneVezes;
+		            break;
+		            
+		        case 2:
+		            System.out.println("Quantos desse produto voce deseja?");
+		            int escolha4 = scanner1.nextInt();
+		            
+		            int frangoVezes = frango * escolha4;
+		            carrinho += frangoVezes;
+		            break;
+		      
+		      case 3:
+		          System.out.println("Quantos desse produto voce deseja?");
+		          int escolha5 = scanner1.nextInt();
+		          
+		          int sucoVezes = suco * escolha5;
+		          carrinho += sucoVezes;
+		          break;
+		          
+		      case 4:
+		          System.out.println("Quantos desse produto voce deseja?");
+		          int escolha6 = scanner1.nextInt();
+		          
+		          int frutaVezes = fruta * escolha6;
+		          carrinho += frutaVezes;
+		          break;
+		          
+		      case 5:
+		          System.out.println("Quantos desse produto voce deseja?");
+		          int escolha7 = scanner1.nextInt();
+		      
+		          int batataVezes = batata * escolha7;
+		          carrinho += batataVezes;
+		          break;
+		    }
+		    
+		    System.out.println("Quanto money voce tem bb?");
+		    int escolha8 = scanner1.nextInt();
+		    int dinheiroAntes = escolha8;
+		    
+		    if (dinheiroAntes > carrinho){
+		        int dinheiroDepois = dinheiroAntes - carrinho;
+		        System.out.println("Voce conseguiu efetuar a compra e sobrou R$ " + dinheiroDepois);
+		    }
+		    if (dinheiroAntes < carrinho){
+		        int dinheiroFalta = carrinho - dinheiroAntes;
+		        System.out.println("Voce é um falido seu bosta pobre do caralho, podre.\nFicou faltando R$ "+ dinheiroFalta + " :).");
+		    } 
+		    
+		}
+		if (escolha1.equalsIgnoreCase("nao")){
+		    System.out.println("Nos veremos na proxima");
+		}
+	}
+}
