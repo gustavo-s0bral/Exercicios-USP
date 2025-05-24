@@ -1,0 +1,14 @@
+public class Main
+{
+	public static void main(String[] args) {
+        int soma = 0;
+        int i = 0;
+
+        while(i < 101){
+            soma = soma + i;
+            System.out.println(soma);
+            i++;
+        }
+        
+	}
+}
