@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+        int lab01, lab02, lab03, lab04, lab01Alunos, lab02Alunos, lab03Alunos, lab04Alunos;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Digite o numero de computadores no laboratorio 01");
+        lab01 = sc.nextInt();
+        System.out.println("Digite a quantidade de alunos no laboratorio 01");
+        lab01Alunos = sc.nextInt();
+        
+	    System.out.println("\nDigite o numero de computadores no laboratorio 02");
+	    lab02 = sc.nextInt();
+	    System.out.println("Digite a quantidade de alunos no laboratorio 02");
+	    lab02Alunos = sc.nextInt();
+	    
+	    System.out.println("\nDigite o numero de computadores no laboratorio 03");
+	    lab03 = sc.nextInt();
+	    System.out.println("Digite a quantidade de alunos no laboratorio 03");
+	    lab03Alunos = sc.nextInt();
+	    
+	    System.out.println("\nDigite o numero de computadores no laboratorio 04");
+	    lab04 = sc.nextInt();
+	    System.out.println("Digite a quantidade de alunos no laboratorio 04");
+	    lab04Alunos = sc.nextInt();
+	    
+	    int numeroTotalAlunos = lab01Alunos + lab02Alunos + lab03Alunos + lab04Alunos;
+	    int numeroTotalComputadores = lab01 + lab02 + lab03 + lab04;
+	    int lab03Condição = lab03/2;
+	    int lab04Condicao = lab04Alunos % 10;
+	    
+	    if (lab01Alunos <= 40 && lab02Alunos % 2 == 0 && lab03Alunos <= lab03Condição && lab04Condicao == 7){
+	        System.out.println("\nHaverá aula baby");
+	    }
+	    else{
+	        System.out.println("\nAloou não tem aula hoje mongol");
+	    }
+	}
+}
