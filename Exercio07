@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+        double dinheiroItu, dinheiroCaio, barrinhaQuantidade, pixRayssa, barrinhaPrecoTotal, dinheiroTotal;
+        double barrinhaPreco = 3.80;
+        
+        Scanner scanner1 = new Scanner(System.in);
+        
+        System.out.println("Preço da barrinha: R$ 3,80\nPromoção de 30% a partir 200 unidades");
+        
+        System.out.println("\nDigite seu dinheiro Itu: ");
+        dinheiroItu = scanner1.nextInt();
+        System.out.println("\nDigite o dinheiro do Caio: ");
+        dinheiroCaio = scanner1.nextInt();
+        System.out.println("\nDigite a quantidade de barrinhas para comprar: ");
+        barrinhaQuantidade = scanner1.nextInt();
+        
+        dinheiroTotal = dinheiroCaio + dinheiroItu;
+        barrinhaPrecoTotal = barrinhaQuantidade * barrinhaPreco;
+        
+        if (barrinhaQuantidade >= 200){
+            double barrinhaPrecoTotalDesconto = barrinhaPrecoTotal - (barrinhaPrecoTotal * 0.3);
+            if (dinheiroTotal >= barrinhaPrecoTotalDesconto){
+                double troco = dinheiroTotal - barrinhaPrecoTotalDesconto;
+                System.out.println("\nA rayssa não precisou fazer o pix e sobrou: R$ " + troco);
+            }
+            else{
+                pixRayssa = barrinhaPrecoTotalDesconto - dinheiroTotal;
+                System.out.println("\no pix feito pela Rayssa será: R$ " + pixRayssa);
+            }
+        }
+        if (barrinhaQuantidade < 200){
+            if (dinheiroTotal >= barrinhaPrecoTotal){
+                double troco = dinheiroTotal - barrinhaPrecoTotal;
+                System.out.println("\nA rayssa não precisou fazer o pix e sobrou: R$ " + troco);
+            }
+            else{
+                pixRayssa = barrinhaPrecoTotal - dinheiroTotal;
+                System.out.println("\no pix feito pela Rayssa será: R$ " + pixRayssa);
+            }
+        } 
+	}
+}
